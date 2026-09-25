@@ -133,7 +133,7 @@ class Cli(unittest.TestCase):
         code, out, _ = self.run_cli("lint", WARN)
         self.assertEqual(code, 0)
         self.assertIn("%s:4:3: warn [duplicate-key]" % WARN, out)
-        self.assertIn("%s:3:8: warn [big-integer]" % WARN, out)
+        self.assertIn("%s:3:9: warn [big-integer]" % WARN, out)
         self.assertEqual(self.run_cli("lint", WARN, "--strict")[0], 1)
         code, out, _ = self.run_cli("lint", MESSY)
         self.assertEqual(code, 1)
