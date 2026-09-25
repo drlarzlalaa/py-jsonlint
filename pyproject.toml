@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsonlint"
+version = "0.1.0"
+description = "Lint, format, minify and query JSON offline: line and column errors with hints, duplicate keys, precision-losing integers, NaN"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "drlarzlalaa" }]
+keywords = ["json", "lint", "format", "validate"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Text Processing :: Markup",
+]
+dependencies = []
+
+[project.scripts]
+jsonlint = "jsonlint.__main__:main"
+
+[tool.setuptools]
+packages = ["jsonlint"]
