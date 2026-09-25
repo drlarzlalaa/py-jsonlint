@@ -137,7 +137,7 @@ class Cli(unittest.TestCase):
         self.assertEqual(self.run_cli("lint", WARN, "--strict")[0], 1)
         code, out, _ = self.run_cli("lint", MESSY)
         self.assertEqual(code, 1)
-        self.assertIn("%s:3:20: error [syntax]" % MESSY, out)
+        self.assertRegex(out, r"messy\.json:3:(20|21): error \[syntax\]")            # Python 3.13 points at the comma, older versions at the bracket
         self.assertIn("trailing comma", out)
 
     def test_fmt_min_get(self):
